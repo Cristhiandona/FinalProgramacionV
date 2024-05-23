@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROGRAMACION V</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>MY API STORE</h1>
+    <h2>Estudiante: Cristhian Orlando Aguirre Cardona</h2>
+
+    <!--Para Agregar Producto-->
+    <button type="button" id="btnAdd" class="btn primary">Agregar producto</button>
+
+    <div class="modal" id="modalAdd">
+      <div class="form-content">
+        <div class="btn-close-form" onclick="closeModalAdd()">X</div>
+        <div class="form-body">
+          <form id="formAdd">
+            <div class="control">
+              <label>Nombre: </label>
+              <input type="text" name="name" />
+            </div>
+            <div class="control">
+              <label>Categoria: </label>
+              <input type="text" name="category" />
+            </div>
+            <div class="control">
+              <label>Descripcion: </label>
+              <input type="text" name="description" />
+            </div>
+            <div class="control">
+              <label>Precio: </label>
+              <input type="text" name="price" />
+            </div>
+            <div class="control">
+              <label>Fechadecreacion: </label>
+              <input type="date" name="createdAt" />
+            </div>
+            <div class="control">
+              <label>FechadeActualizacion: </label>
+              <input type="date" name="updatedAt" />
+            </div>
+          </form>
+        </div>
+        <div class="form-footer">
+          <button type="button" class="btn primary" onclick="closeModalAdd()">Cancelar</button>
+          <button type="button" class="btn secundary" onclick="createProduct()">Guardar</button>
+        </div>
+        <span id="msgFormAdd" class="msg-error"></span>
+      </div>
+    </div>
+
+    <!--Para confirmar la eliminacion del campo-->
+    <div class="modal" id="modalConfirm">
+      <div class="form-content">
+        <div class="btn-close-form" onclick="closeModalConfirm()">X</div>
+        <div class="form-body">
+          <h3>Eliminar</h3>
+          <p>¿Estas seguro de eliminar el producto?</p>
+        </div>
+        <div class="form-footer">
+          <button type="button" class="caution1" onclick="confirmDelete(false)">No</button>
+          <button type="button" class="caution" onclick="confirmDelete(true)">Si</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert" id="alert">Algo sucedió..</div>
+
+    <div id="productsList" class="products-list"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
